@@ -1,2 +1,2 @@
 # naflow
-Neurophysiological Data WOrkflow
+Neurophysiological Data Workflow
