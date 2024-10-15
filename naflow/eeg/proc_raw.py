@@ -28,6 +28,16 @@ def concatenate_raws(raws, l_freq, order = 2, len_transition = 0.5):
     return cat_raw
 
 class RemoveEOG(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
+    """
+    Remove EOG artifacts from raw signals.
+
+    Parameters
+    ----------
+    l_freq : float, default = 1.0
+        cutoff frequency for the highpass filter applied to raw signal before applying ICA.
+    len_transition : float, default = 0.5
+        duration of the taper in second for applying window function before concatenating multiple raws.
+    """
     def __init__(self, l_freq = 1.0, len_transition = 0.5):
         self.l_freq = l_freq
         self.len_transition = len_transition
@@ -38,12 +48,17 @@ class RemoveEOG(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
     def find_bad_eog(self, raw, ica, h_freq = 10, threshold = 0.9):
         """
         Parameters
-        ==========
+        ----------
 
         raw : raw instance contains eog channels.
         ica : ica instance
         filter : filter range will be used for eog channels
-        threshold, numerical or 'max': 
+        threshold : numerical or 'max': 
+        
+        Returns
+        -------
+        scores : pearson correlation bet. each IC and EOG channel
+        indices : indices of ICs which should be removed
         
         """
 
@@ -67,8 +82,6 @@ class RemoveEOG(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
 
             score = list() 
             for idx, ic in enumerate(IC.ch_names):
-                #data_ic = ica.get_data(picks = ic)
-            
                 a = scipy.stats.pearsonr(x = np.squeeze(data_eog), y = np.squeeze(IC.get_data(picks = ic)))
 
                 score.append(a[0])
@@ -110,7 +123,43 @@ class RemoveEOG(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
             X = self.ica.apply(X.copy(), exclude = self.ica.exclude)
         return X
 
-class ExtractERP(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
+class ExtractEpochs(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
+    """
+    Extract Epochs from raws
+    
+    Parameters
+    ----------
+    l_freq : float, default = 0.1 
+        cutoff frequency for high-pass filter
+    h_freq : float, default = 8
+        cutoff frequency for low-pass filter
+    filter_params : dict, default = {'method': 'iir', 'phase': 'zero', 'iir_params':{'order':2, 'ftype':'butter'}, 'n_jobs': -1}
+        pass to filter() method of mne.raw object
+    tmin : float, default = -0.1
+        start time of the epochs in seconds relative to the event onset.
+    tmax : float, default = 1.2
+        end time of the epochs in seconds relative to the event onset.
+    baseline : None or tuple of length 2, default = None
+        time duration for baseline correction. No baseline correction will be applied if None. see details for baseline arguments for mne.Epochs()
+    resample : None or float, default = None
+        convert sampling frequency. No resampling will be applied if None.
+    event_names : None or dict, default = None
+        name of each event.
+        e.g., if {'A':['1', '101'], 'B': ['2', '102']}, event '1' and '101' will be tagged as 'A', and event '2' and '102' will be tagged as 'B'. 'misc' will be tagged if there's no matched element and if not None.
+    marker_trial : None or list
+        event id which indecates start of the trial.
+        e.g., if [str(val) for val in range(201, 300)], epochs between event '201' to '299' will be tagged as different trial.
+    marker_tnt : None or dict
+        event id for target and nontarget event.
+        dict should have the following structure. {'target': list(), 'nontarget':list()}
+        e.g., if {'target': [str(val) for val in range(101, 200)], 'nontarget': [str(val) for val in range(1, 100)]}. events '101' to '199' will be tagged as target and events '1' to '99' will be tagged as nontarget
+    add_run : Bool, default = False
+        run number will be tagged if True.
+        if True, raw.info['description'] should include run tag, e.g., raw.info['description'] = 'run:1'
+    remove_misc : Bool, default = True
+        remove misc event which was not specified with event_names parameter.
+    """
+
     def __init__(self,
                  l_freq = 0.1,
                  h_freq = 8,
@@ -122,7 +171,7 @@ class ExtractERP(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
                  event_names = None,
                  marker_trial = None,
                  marker_tnt = None,
-                 add_run = True,
+                 add_run = False,
                  remove_misc = True):
         self.l_freq = l_freq 
         self.h_freq = h_freq
@@ -139,9 +188,11 @@ class ExtractERP(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
         self.remove_misc = remove_misc
         
     def fit(self, X, y = None):
+        """fit"""
         return self
     
     def transform(self, X):
+        """transform"""
         if type(X) != list:
             raise RuntimeError("type(X) should be list.")
 
