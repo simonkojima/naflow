@@ -145,18 +145,19 @@ class BCISimulation(sklearn.base.BaseEstimator, sklearn.base.ClassifierMixin):
                  classifier,
                  picks = 'eeg',
                  dynamic_stopping = False,
-                 dynamic_stopping_params = None,
+                 dynamic_stopping_params = {},
                  transient_state = False):
         self.vectorizer = vectorizer
         self.classifier = classifier
         self.picks = picks
         self.dynamic_stopping = dynamic_stopping
         self.dynamic_stopping_params = dynamic_stopping_params
+        self.transient_state = transient_state
         self.trial_classifier = TrialClassifier(classifier = self.classifier,
                                                 vectorizer = self.vectorizer,
                                                 dynamic_stopping = self.dynamic_stopping,
-                                                transient_state = transient_state,
-                                                **dynamic_stopping_params)
+                                                transient_state = self.transient_state,
+                                                **self.dynamic_stopping_params)
     
     def fit(self, X, y = None):
         X = X.copy().pick(picks = self.picks)

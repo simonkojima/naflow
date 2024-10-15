@@ -1,6 +1,7 @@
 import numpy as np
+import sklearn
 
-class EpochsVectorizer():
+class EpochsVectorizer(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
     """
     
     type: 'mne', 'ndarray'
