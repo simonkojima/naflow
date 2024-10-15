@@ -12,17 +12,17 @@ def subtract_classwise_mean(X, y):
     return X
 
 class ShrinkageLDA(sklearn.base.BaseEstimator, sklearn.base.ClassifierMixin):
-    def __init__(self, gamma = 'shrinkage', scaling = 2):
-        """
-        LDA (Linear Discriminant Analysis) implementation with scikit-learn interface.
+    """
+    LDA (Linear Discriminant Analysis) implementation with scikit-learn interface.
 
-        Parameters
-        ----------
-        gamma : float or str, default = 'shrinkage'
-        scaling : float, default = 2
-                  the distance between the projeted means become specified number.
-        
-        """
+    Parameters
+    ----------
+    gamma : float or str, default = 'shrinkage'
+    scaling : float, default = 2
+              the distance between the projeted means become specified number.
+    
+    """
+    def __init__(self, gamma = 'shrinkage', scaling = 2):
         self.w = None
         self.b = None
         self.gamma = gamma
