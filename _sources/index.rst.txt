@@ -5,15 +5,26 @@
 
 Welcome to naflow's documentation!
 ==================================
+Neurophysiological Data Workflow (naflow)
+
+Installation
+============
+with pip
+
+.. code-block::
+
+   pip install naflow
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   
    modules
-
-
-
+   
+Sources
+=======
+ * `github <https://github.com/simonkojima/naflow>`_ 
+ * `pypi <https://pypi.org/project/naflow/>`_
+ 
 Indices and tables
 ==================
 

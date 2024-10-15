@@ -18,9 +18,7 @@
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="naflow.stats package" href="naflow.stats.html" />
-    <link rel="prev" title="naflow.classification package" href="naflow.classification.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,24 +40,49 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">naflow</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="naflow.html">naflow package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="naflow.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="naflow.classification.html">naflow.classification package</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">naflow.eeg package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="naflow.stats.html">naflow.stats package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="naflow.utils.html">naflow.utils package</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">naflow.eeg package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-naflow.eeg.proc_classification">naflow.eeg.proc_classification module</a><ul>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.BCISimulation"><code class="docutils literal notranslate"><span class="pre">BCISimulation</span></code></a><ul>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.BCISimulation.fit"><code class="docutils literal notranslate"><span class="pre">BCISimulation.fit()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.BCISimulation.predict"><code class="docutils literal notranslate"><span class="pre">BCISimulation.predict()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.BCISimulation.set_score_request"><code class="docutils literal notranslate"><span class="pre">BCISimulation.set_score_request()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="naflow.html#module-naflow">Module contents</a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.TrialClassifier"><code class="docutils literal notranslate"><span class="pre">TrialClassifier</span></code></a><ul>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.TrialClassifier.check_nstims"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.check_nstims()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.TrialClassifier.fit"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.fit()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.TrialClassifier.predict"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.predict()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.TrialClassifier.set_score_request"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.set_score_request()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.TrialClassifier.test_distances"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.test_distances()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#naflow.eeg.proc_classification.calc_itr"><code class="docutils literal notranslate"><span class="pre">calc_itr()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-naflow.eeg.proc_raw">naflow.eeg.proc_raw module</a><ul>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.ExtractEpochs"><code class="docutils literal notranslate"><span class="pre">ExtractEpochs</span></code></a><ul>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.ExtractEpochs.fit"><code class="docutils literal notranslate"><span class="pre">ExtractEpochs.fit()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.ExtractEpochs.transform"><code class="docutils literal notranslate"><span class="pre">ExtractEpochs.transform()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.RemoveEOG"><code class="docutils literal notranslate"><span class="pre">RemoveEOG</span></code></a><ul>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.RemoveEOG.find_bad_eog"><code class="docutils literal notranslate"><span class="pre">RemoveEOG.find_bad_eog()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.RemoveEOG.fit"><code class="docutils literal notranslate"><span class="pre">RemoveEOG.fit()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.RemoveEOG.transform"><code class="docutils literal notranslate"><span class="pre">RemoveEOG.transform()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.concatenate_raws"><code class="docutils literal notranslate"><span class="pre">concatenate_raws()</span></code></a></li>
+<li><a class="reference internal" href="#naflow.eeg.proc_raw.reconstruct_raw"><code class="docutils literal notranslate"><span class="pre">reconstruct_raw()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-naflow.eeg">Module contents</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
+</div>
         </div>
       </div>
     </nav>
@@ -74,8 +97,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">naflow</a></li>
-          <li class="breadcrumb-item"><a href="naflow.html">naflow package</a></li>
       <li class="breadcrumb-item active">naflow.eeg package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/naflow.eeg.rst.txt" rel="nofollow"> View page source</a>
@@ -346,10 +367,7 @@ if True, raw.info[‘description’] should include run tag, e.g., raw.info[‘d
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="naflow.classification.html" class="btn btn-neutral float-left" title="naflow.classification package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="naflow.stats.html" class="btn btn-neutral float-right" title="naflow.stats package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
