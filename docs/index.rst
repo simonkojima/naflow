@@ -7,6 +7,12 @@ Welcome to naflow's documentation!
 ==================================
 Neurophysiological Data Workflow (naflow)
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+   
 Installation
 ============
 with pip
@@ -15,11 +21,6 @@ with pip
 
    pip install naflow
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-   modules
-   
 Sources
 =======
  * `github <https://github.com/simonkojima/naflow>`_ 
