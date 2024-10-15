@@ -48,6 +48,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">naflow package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="naflow.classification.html">naflow.classification package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html">naflow.eeg package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="naflow.stats.html">naflow.stats package</a></li>
 </ul>
 </li>
@@ -103,8 +104,54 @@
 <li class="toctree-l3"><a class="reference internal" href="naflow.classification.html#naflow.classification.classifier.subtract_classwise_mean"><code class="docutils literal notranslate"><span class="pre">subtract_classwise_mean()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="naflow.classification.html#module-naflow.classification.feature_extraction">naflow.classification.feature_extraction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naflow.classification.html#module-naflow.classification.feature_extraction">naflow.classification.feature_extraction module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="naflow.classification.html#naflow.classification.feature_extraction.EpochsVectorizer"><code class="docutils literal notranslate"><span class="pre">EpochsVectorizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="naflow.classification.html#naflow.classification.feature_extraction.EpochsVectorizer.fit"><code class="docutils literal notranslate"><span class="pre">EpochsVectorizer.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.classification.html#naflow.classification.feature_extraction.EpochsVectorizer.transform"><code class="docutils literal notranslate"><span class="pre">EpochsVectorizer.transform()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="naflow.classification.html#module-naflow.classification">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="naflow.eeg.html">naflow.eeg package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="naflow.eeg.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naflow.eeg.html#module-naflow.eeg.proc_classification">naflow.eeg.proc_classification module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.BCISimulation"><code class="docutils literal notranslate"><span class="pre">BCISimulation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.BCISimulation.fit"><code class="docutils literal notranslate"><span class="pre">BCISimulation.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.BCISimulation.predict"><code class="docutils literal notranslate"><span class="pre">BCISimulation.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.BCISimulation.set_score_request"><code class="docutils literal notranslate"><span class="pre">BCISimulation.set_score_request()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.TrialClassifier"><code class="docutils literal notranslate"><span class="pre">TrialClassifier</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.TrialClassifier.check_nstims"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.check_nstims()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.TrialClassifier.fit"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.TrialClassifier.predict"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.TrialClassifier.set_score_request"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.set_score_request()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.TrialClassifier.test_distances"><code class="docutils literal notranslate"><span class="pre">TrialClassifier.test_distances()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_classification.calc_itr"><code class="docutils literal notranslate"><span class="pre">calc_itr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="naflow.eeg.html#module-naflow.eeg.proc_raw">naflow.eeg.proc_raw module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.ExtractERP"><code class="docutils literal notranslate"><span class="pre">ExtractERP</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.ExtractERP.fit"><code class="docutils literal notranslate"><span class="pre">ExtractERP.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.ExtractERP.transform"><code class="docutils literal notranslate"><span class="pre">ExtractERP.transform()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.RemoveEOG"><code class="docutils literal notranslate"><span class="pre">RemoveEOG</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.RemoveEOG.find_bad_eog"><code class="docutils literal notranslate"><span class="pre">RemoveEOG.find_bad_eog()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.RemoveEOG.fit"><code class="docutils literal notranslate"><span class="pre">RemoveEOG.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.RemoveEOG.transform"><code class="docutils literal notranslate"><span class="pre">RemoveEOG.transform()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.concatenate_raws"><code class="docutils literal notranslate"><span class="pre">concatenate_raws()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="naflow.eeg.html#naflow.eeg.proc_raw.reconstruct_raw"><code class="docutils literal notranslate"><span class="pre">reconstruct_raw()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="naflow.eeg.html#module-naflow.eeg">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="naflow.stats.html">naflow.stats package</a><ul>
