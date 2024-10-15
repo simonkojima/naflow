@@ -10,6 +10,7 @@ Subpackages
    naflow.classification
    naflow.eeg
    naflow.stats
+   naflow.utils
 
 Module contents
 ---------------
