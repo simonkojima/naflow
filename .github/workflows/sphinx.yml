@@ -1,0 +1,25 @@
+name: Sphinx
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    steps:
+      - uses: actions/checkout@v1
+      - run: pip install -r numpy scipy scikit-learn mne tag-mne
+      - name: Sphinx build
+        run: sphinx-apidoc -f -o docs/ naflow/
+      - name: Make HTML
+        run: sphinx-build docs/ docs/_build/ -a
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_build/
