@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    naflow.classification
+   naflow.eeg
    naflow.stats
 
 Module contents

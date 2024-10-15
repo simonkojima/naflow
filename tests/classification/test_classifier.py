@@ -1,7 +1,6 @@
 import unittest
 import os
 
-import sklearn.discriminant_analysis
 import naflow
 
 import numpy as np
