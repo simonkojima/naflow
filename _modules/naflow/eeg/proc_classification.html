@@ -233,18 +233,19 @@
                  <span class="n">classifier</span><span class="p">,</span>
                  <span class="n">picks</span> <span class="o">=</span> <span class="s1">&#39;eeg&#39;</span><span class="p">,</span>
                  <span class="n">dynamic_stopping</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                 <span class="n">dynamic_stopping_params</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">dynamic_stopping_params</span> <span class="o">=</span> <span class="p">{},</span>
                  <span class="n">transient_state</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vectorizer</span> <span class="o">=</span> <span class="n">vectorizer</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">classifier</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">picks</span> <span class="o">=</span> <span class="n">picks</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dynamic_stopping</span> <span class="o">=</span> <span class="n">dynamic_stopping</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dynamic_stopping_params</span> <span class="o">=</span> <span class="n">dynamic_stopping_params</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transient_state</span> <span class="o">=</span> <span class="n">transient_state</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">trial_classifier</span> <span class="o">=</span> <span class="n">TrialClassifier</span><span class="p">(</span><span class="n">classifier</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">,</span>
                                                 <span class="n">vectorizer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vectorizer</span><span class="p">,</span>
                                                 <span class="n">dynamic_stopping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dynamic_stopping</span><span class="p">,</span>
-                                                <span class="n">transient_state</span> <span class="o">=</span> <span class="n">transient_state</span><span class="p">,</span>
-                                                <span class="o">**</span><span class="n">dynamic_stopping_params</span><span class="p">)</span>
+                                                <span class="n">transient_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transient_state</span><span class="p">,</span>
+                                                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">dynamic_stopping_params</span><span class="p">)</span>
     
 <div class="viewcode-block" id="BCISimulation.fit">
 <a class="viewcode-back" href="../../../naflow.eeg.html#naflow.eeg.proc_classification.BCISimulation.fit">[docs]</a>

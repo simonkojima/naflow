@@ -50,6 +50,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">naflow.classification package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="naflow.eeg.html">naflow.eeg package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="naflow.stats.html">naflow.stats package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="naflow.utils.html">naflow.utils package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="naflow.html#module-naflow">Module contents</a></li>
@@ -178,7 +179,7 @@ sub-estimator of a meta-estimator, e.g. used inside a
 <dl class="py class">
 <dt class="sig sig-object py" id="naflow.classification.feature_extraction.EpochsVectorizer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">naflow.classification.feature_extraction.</span></span><span class="sig-name descname"><span class="pre">EpochsVectorizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ivals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_prime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mne'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/naflow/classification/feature_extraction.html#EpochsVectorizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#naflow.classification.feature_extraction.EpochsVectorizer" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></p>
 <p>type: ‘mne’, ‘ndarray’</p>
 <p>channel_prime:
 if True,  vec = [ch1_t1, ch2_t1, ch3_t1, ch1_t2, ch2_t2, ch3_t2, …]

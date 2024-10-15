@@ -70,10 +70,11 @@
              
   <h1>Source code for naflow.classification.feature_extraction</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
 
 <div class="viewcode-block" id="EpochsVectorizer">
 <a class="viewcode-back" href="../../../naflow.classification.html#naflow.classification.feature_extraction.EpochsVectorizer">[docs]</a>
-<span class="k">class</span> <span class="nc">EpochsVectorizer</span><span class="p">():</span>
+<span class="k">class</span> <span class="nc">EpochsVectorizer</span><span class="p">(</span><span class="n">sklearn</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">TransformerMixin</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    </span>
 <span class="sd">    type: &#39;mne&#39;, &#39;ndarray&#39;</span>
