@@ -13,7 +13,7 @@ jobs:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - uses: actions/checkout@v1
-      - run: pip install -r numpy scipy scikit-learn mne tag-mne
+      - run: pip install numpy scipy scikit-learn mne tag-mne
       - name: Sphinx build
         run: sphinx-apidoc -f -o docs/ naflow/
       - name: Make HTML
