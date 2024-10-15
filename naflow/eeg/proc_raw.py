@@ -108,6 +108,7 @@ class RemoveEOG(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
         ica.fit(raw.copy().pick(picks = 'eeg'))
         
         scores, indices = self.find_bad_eog(raw, ica, h_freq = 10, threshold = 'max')
+        indices = np.unique(indices)
         ica.exclude = indices
 
         self.exclude = indices

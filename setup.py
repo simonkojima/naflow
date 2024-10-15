@@ -39,5 +39,6 @@ setuptools.setup(
                       "scipy",
                       "scikit-learn",
                       "mne>=1.8",
-                      "tag-mne>=0.0.3"],
+                      "tag-mne>=0.0.3",
+                      "tqdm"],
 )
