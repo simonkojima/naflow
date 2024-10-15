@@ -1,0 +1,21 @@
+naflow.read package
+===================
+
+Submodules
+----------
+
+naflow.read.proc\_xdf module
+----------------------------
+
+.. automodule:: naflow.read.proc_xdf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: naflow.read
+   :members:
+   :undoc-members:
+   :show-inheritance:

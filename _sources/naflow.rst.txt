@@ -9,6 +9,7 @@ Subpackages
 
    naflow.classification
    naflow.eeg
+   naflow.read
    naflow.stats
    naflow.utils
 

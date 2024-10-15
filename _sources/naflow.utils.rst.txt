@@ -12,6 +12,14 @@ naflow.utils.proc\_temporal module
    :undoc-members:
    :show-inheritance:
 
+naflow.utils.std module
+-----------------------
+
+.. automodule:: naflow.utils.std
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
