@@ -1,29 +1,22 @@
 naflow.classification package
 =============================
 
+.. automodule:: naflow.classification
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Submodules
 ----------
 
-naflow.classification.classifier module
----------------------------------------
+
+.. automodule:: naflow.classification.bci_simulation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 
 .. automodule:: naflow.classification.classifier
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-naflow.classification.feature\_extraction module
-------------------------------------------------
-
-.. automodule:: naflow.classification.feature_extraction
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: naflow.classification
    :members:
    :undoc-members:
    :show-inheritance:

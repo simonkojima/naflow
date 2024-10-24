@@ -1,7 +1,7 @@
-naflow.stats package
-====================
+naflow.io package
+=================
 
-.. automodule:: naflow.stats
+.. automodule:: naflow.io
    :members:
    :undoc-members:
    :show-inheritance:
@@ -10,7 +10,7 @@ Submodules
 ----------
 
 
-.. automodule:: naflow.stats.proc_separability
+.. automodule:: naflow.io.proc_xdf
    :members:
    :undoc-members:
    :show-inheritance:

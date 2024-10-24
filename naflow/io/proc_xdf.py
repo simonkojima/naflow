@@ -2,7 +2,7 @@ import numpy as np
 import pyxdf
 import mne
 
-def get_raw_from_streams(fname, name_eeg_stream, name_marker_stream, channel_type = None):
+def read_raw_xdf(fname, name_eeg_stream, name_marker_stream, channel_type = None):
     """
     Parameters
     ----------

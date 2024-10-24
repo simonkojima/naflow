@@ -1,6 +1,11 @@
 naflow package
 ==============
 
+.. automodule:: naflow
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Subpackages
 -----------
 
@@ -8,14 +13,9 @@ Subpackages
    :maxdepth: 4
 
    naflow.classification
-   naflow.eeg
+   naflow.feature_extraction
+   naflow.io
+   naflow.metrics
+   naflow.preprocessing
    naflow.stats
    naflow.utils
-
-Module contents
----------------
-
-.. automodule:: naflow
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -3,7 +3,8 @@ import os
 import requests
 import tqdm
 
-import naflow
+import naflow.io
+import naflow.utils
 
 import numpy as np
 import scipy
@@ -33,7 +34,7 @@ class Test_get_raw_from_streams(unittest.TestCase):
                         f.flush()
 
     def read_raws(self):
-        raw, events, event_id = naflow.read.get_raw_from_streams(self.fname,
+        raw, events, event_id = naflow.io.get_raw_from_streams(self.fname,
                                                                name_eeg_stream = self.name_eeg_stream,
                                                                name_marker_stream = self.name_marker_stream,
                                                                channel_type={'eog':['vEOG', 'hEOG']})

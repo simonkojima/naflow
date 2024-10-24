@@ -1,7 +1,7 @@
-naflow.stats package
-====================
+naflow.metrics package
+======================
 
-.. automodule:: naflow.stats
+.. automodule:: naflow.metrics
    :members:
    :undoc-members:
    :show-inheritance:
@@ -10,7 +10,7 @@ Submodules
 ----------
 
 
-.. automodule:: naflow.stats.proc_separability
+.. automodule:: naflow.metrics.score_classification
    :members:
    :undoc-members:
    :show-inheritance:

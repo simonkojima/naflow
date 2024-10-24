@@ -1,21 +1,22 @@
 naflow.utils package
 ====================
 
+.. automodule:: naflow.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Submodules
 ----------
 
-naflow.utils.proc\_temporal module
-----------------------------------
 
 .. automodule:: naflow.utils.proc_temporal
    :members:
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
 
-.. automodule:: naflow.utils
+.. automodule:: naflow.utils.std
    :members:
    :undoc-members:
    :show-inheritance:

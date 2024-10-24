@@ -4,7 +4,8 @@ import requests
 import tqdm
 import mne
 
-import naflow
+import naflow.utils
+import naflow.preprocessing
 
 import numpy as np
 import scipy
@@ -84,7 +85,7 @@ class Test_RemoveEOG(unittest.TestCase):
         highpass_list = [raw.info['highpass'] for raw in raws]
         lowpass_list = [raw.info['lowpass'] for raw in raws]
 
-        remove_eog = naflow.RemoveEOG(l_freq = 1.0, len_transition = 0.5)
+        remove_eog = naflow.preprocessing.RemoveEOG(l_freq = 1.0, len_transition = 0.5)
         remove_eog.fit(raws)
         
         for idx, raw in enumerate(raws):

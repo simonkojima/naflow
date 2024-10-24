@@ -1,7 +1,7 @@
 import unittest
 import os
 
-import naflow
+import naflow.classification
 
 import numpy as np
 import scipy
