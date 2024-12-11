@@ -2,13 +2,25 @@ import numpy as np
 import pyxdf
 import mne
 
+def get_stream_names_xdf(fname, print_name = True):
+    streams, header = pyxdf.load_xdf(fname)
+    
+    names = list()
+    for idx, stream in enumerate(streams):
+        name = stream['info']['name'][0]
+        names.append(name)
+        if print_name:
+            print("Name of Stream %d: %s"%(idx, name))
+            
+    return names
+
 def read_raw_xdf(fname, name_eeg_stream, name_marker_stream, channel_type = None):
     """
     Parameters
     ----------
     
-    channel_type: None or dict, default = None
-        e.g., {'eog': ['vEOG', 'hEOG'], 'ecg': ['ECG']}
+    channel_type: None or dict, default None
+        e.g., `{'eog': ['vEOG', 'hEOG'], 'ecg': ['ECG']}`
     """
     
     streams, header = pyxdf.load_xdf(fname)

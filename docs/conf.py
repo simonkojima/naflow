@@ -26,6 +26,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.napoleon",
     #"sphinx_rtd_theme",
+    "pydata_sphinx_theme",
     "myst_parser",
 ]
 

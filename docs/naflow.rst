@@ -13,6 +13,7 @@ Subpackages
    :maxdepth: 4
 
    naflow.classification
+   naflow.datasets
    naflow.feature_extraction
    naflow.io
    naflow.metrics
