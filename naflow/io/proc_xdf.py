@@ -2,6 +2,14 @@ import numpy as np
 import pyxdf
 import mne
 
+class numpy_data():
+    def __init__(self, data, ch_names, times, fs):
+        self.data = data
+        self.ch_names = ch_names
+        self.times = times
+        self.fs = fs
+
+
 def get_stream_names_xdf(fname, print_name = True):
     streams, header = pyxdf.load_xdf(fname)
     
@@ -13,6 +21,29 @@ def get_stream_names_xdf(fname, print_name = True):
             print("Name of Stream %d: %s"%(idx, name))
             
     return names
+
+def read_numpy_xdf(fname):
+    streams, header = pyxdf.load_xdf(fname)
+
+    data = dict()
+    for idx, stream in enumerate(streams):
+        name = stream['info']['name'][0]
+        
+        try:
+            ch_names = stream['info']['desc'][0]['channels'][0]['channel']
+        except:
+            ch_names = None
+
+        fs = float(stream['info']['nominal_srate'][0])
+
+        data[name] = numpy_data(data = stream['time_series'],
+                                times = stream['time_stamps'],
+                                ch_names = ch_names,
+                                fs = fs)
+
+        
+    return data
+    
 
 def read_raw_xdf(fname, name_eeg_stream, name_marker_stream, channel_type = None):
     """
